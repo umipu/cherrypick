@@ -22541,6 +22541,8 @@ export type operations = {
           visibility?: 'public' | 'home' | 'followers' | 'specified';
           visibleUserIds?: string[];
           cw?: string | null;
+				  /** @default false */
+					localOnly?: boolean;
           /**
            * @default null
            * @enum {string|null}
@@ -22663,6 +22665,7 @@ export type operations = {
                 cw?: string | null;
                 fileIds: string[];
                 /** @enum {string} */
+								localOnly: boolean;
                 visibility: 'public' | 'home' | 'followers' | 'specified';
                 visibleUsers: components['schemas']['UserLite'][];
                 user: components['schemas']['User'];
