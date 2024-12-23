@@ -93,8 +93,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 				<MkSwitch v-model="highlightSensitiveMedia">{{ i18n.ts.highlightSensitiveMedia }}</MkSwitch>
 				<MkSwitch v-model="squareAvatars">{{ i18n.ts.squareAvatars }}</MkSwitch>
 				<MkSwitch v-model="showAvatarDecorations">{{ i18n.ts.showAvatarDecorations }}</MkSwitch>
-				<MkSwitch v-model="useKoruri">Koruri フォントを使用 <span class="_beta">Shiroha</span>
-				</MkSwitch>
+				<MkSwitch v-model="useKoruri">Koruri フォントを使用 <span class="_beta">Shiroha</span></MkSwitch>
 				<MkSwitch v-model="forceShowAds">{{ i18n.ts.forceShowAds }}</MkSwitch>
 				<MkSwitch v-model="enableSeasonalScreenEffect">{{ i18n.ts.seasonalScreenEffect }}</MkSwitch>
 				<MkSwitch v-model="useNativeUIForVideoAudioPlayer">{{ i18n.ts.useNativeUIForVideoAudioPlayer }}</MkSwitch>
