@@ -93,7 +93,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 				<MkSwitch v-model="highlightSensitiveMedia">{{ i18n.ts.highlightSensitiveMedia }}</MkSwitch>
 				<MkSwitch v-model="squareAvatars">{{ i18n.ts.squareAvatars }}</MkSwitch>
 				<MkSwitch v-model="showAvatarDecorations">{{ i18n.ts.showAvatarDecorations }}</MkSwitch>
-				<MkSwitch v-model="useSystemFont">{{ i18n.ts.useSystemFont }}</MkSwitch>
+				<MkSwitch v-model="useKoruri">Koruri フォントを使用 <span class="_beta">Shiroha</span>
+				</MkSwitch>
 				<MkSwitch v-model="forceShowAds">{{ i18n.ts.forceShowAds }}</MkSwitch>
 				<MkSwitch v-model="enableSeasonalScreenEffect">{{ i18n.ts.seasonalScreenEffect }}</MkSwitch>
 				<MkSwitch v-model="useNativeUIForVideoAudioPlayer">{{ i18n.ts.useNativeUIForVideoAudioPlayer }}</MkSwitch>
@@ -290,7 +291,7 @@ import { globalEvents } from '@/events.js';
 import { claimAchievement } from '@/scripts/achievements.js';
 
 // const fontSize = ref(miLocalStorage.getItem('fontSize'));
-const useSystemFont = ref(miLocalStorage.getItem('useSystemFont') != null);
+const useKoruri = ref(miLocalStorage.getItem('useSystemFont') == null);
 
 const fontSizeBefore = ref(miLocalStorage.getItem('fontSize'));
 const useBoldFont = ref(miLocalStorage.getItem('useBoldFont'));
@@ -380,8 +381,8 @@ watch(useBoldFont, () => {
 	}
 });
 
-watch(useSystemFont, () => {
-	if (useSystemFont.value) {
+watch(useKoruri, () => {
+	if (!useKoruri.value) {
 		miLocalStorage.setItem('useSystemFont', 't');
 	} else {
 		miLocalStorage.removeItem('useSystemFont');
@@ -394,7 +395,7 @@ watch([
 	removeModalBgColorForBlur,
 	// fontSize,
 	useBoldFont,
-	useSystemFont,
+	useKoruri,
 	squareAvatars,
 	showGapBetweenNotesInTimeline,
 	showUnreadNotificationsCount,
